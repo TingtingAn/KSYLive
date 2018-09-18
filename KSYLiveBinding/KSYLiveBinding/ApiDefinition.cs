@@ -12,6 +12,8 @@ using ObjCRuntime;
 using OpenGLES;
 using UIKit;
 using GPUImage;
+using GPUImage.Sources;
+using GPUImage.Filters;
 
 namespace KSYLive
 {
@@ -66,64 +68,6 @@ namespace KSYLive
         // @property KSYMicType currentMicType;
         [Export("currentMicType", ArgumentSemantic.Assign)]
         KSYMicType CurrentMicType();
-    }
-
-    // @interface GLProgram : NSObject
-    [BaseType(typeof(NSObject))]
-    interface GLProgram
-    {
-        // @property (readwrite, nonatomic) BOOL initialized;
-        [Export("initialized")]
-        bool Initialized { get; set; }
-
-        // @property (readwrite, copy, nonatomic) NSString * vertexShaderLog;
-        [Export("vertexShaderLog")]
-        string VertexShaderLog { get; set; }
-
-        // @property (readwrite, copy, nonatomic) NSString * fragmentShaderLog;
-        [Export("fragmentShaderLog")]
-        string FragmentShaderLog { get; set; }
-
-        // @property (readwrite, copy, nonatomic) NSString * programLog;
-        [Export("programLog")]
-        string ProgramLog { get; set; }
-
-        // -(id)initWithVertexShaderString:(NSString *)vShaderString fragmentShaderString:(NSString *)fShaderString;
-        [Export("initWithVertexShaderString:fragmentShaderString:")]
-        IntPtr Constructor(string vShaderString, string fShaderString);
-
-        // -(id)initWithVertexShaderString:(NSString *)vShaderString fragmentShaderFilename:(NSString *)fShaderFilename;
-        [Export("initWithVertexShaderString:fragmentShaderFilename:")]
-        IntPtr ConstructorWithVertexShaderString(string vShaderString, string fShaderFilename);
-
-        // -(id)initWithVertexShaderFilename:(NSString *)vShaderFilename fragmentShaderFilename:(NSString *)fShaderFilename;
-        [Export("initWithVertexShaderFilename:fragmentShaderFilename:")]
-        IntPtr ConstructorWithVertexShaderFilename(string vShaderFilename, string fShaderFilename);
-
-        // -(void)addAttribute:(NSString *)attributeName;
-        [Export("addAttribute:")]
-        void AddAttribute(string attributeName);
-
-        // -(GLuint)attributeIndex:(NSString *)attributeName;
-        [Export("attributeIndex:")]
-        uint AttributeIndex(string attributeName);
-
-        // -(GLuint)uniformIndex:(NSString *)uniformName;
-        [Export("uniformIndex:")]
-        uint UniformIndex(string uniformName);
-
-        // -(BOOL)link;
-        [Export("link")]
-
-        bool Link { get; }
-
-        // -(void)use;
-        [Export("use")]
-        void Use();
-
-        // -(void)validate;
-        [Export("validate")]
-        void Validate();
     }
 
     // @interface KSYAQPlayer : NSObject
@@ -1327,7 +1271,7 @@ namespace KSYLive
 
     // @interface KSYGPUPicOutput : NSObject <GPUImageInput>
     [BaseType(typeof(NSObject))]
-    interface KSYGPUPicOutput : GPUImageInput
+    interface KSYGPUPicOutput : IGPUImageInput
     {
         // -(id)initWithOutFmt:(OSType)fmt;
         [Export("initWithOutFmt:")]
@@ -1770,17 +1714,17 @@ namespace KSYLive
         string ReachabilityDetectURL { get; set; }
     }
 
-    
+
 
     partial interface Constants
     {
         // extern NSString *const KSYStreamStateDidChangeNotification __attribute__((availability(ios, introduced=7_0)));
-        [iOS(7, 0)]
+        [Introduced(PlatformName.iOS, 7, 0)]
         [Field("KSYStreamStateDidChangeNotification", "__Internal")]
         NSString KSYStreamStateDidChangeNotification { get; }
 
         // extern NSString *const KSYNetStateEventNotification __attribute__((availability(ios, introduced=7_0)));
-        [iOS(7, 0)]
+        [Introduced(PlatformName.iOS, 7, 0)]
         [Field("KSYNetStateEventNotification", "__Internal")]
         NSString KSYNetStateEventNotification { get; }
     }
@@ -2741,7 +2685,7 @@ namespace KSYLive
 
     // @interface KSYGPUView : UIView <GPUImageInput>
     [BaseType(typeof(UIView))]
-    interface KSYGPUView : GPUImageInput
+    interface KSYGPUView : IGPUImageInput
     {
         // @property (readwrite, nonatomic) GPUImageFillModeType fillMode;
         [Export("fillMode", ArgumentSemantic.Assign)]
@@ -3125,12 +3069,12 @@ namespace KSYLive
         // -(BOOL)switchCamera;
         [Export("switchCamera")]
 
-        bool SwitchCamera { get; }
+        bool SwitchCamera();
 
         // -(BOOL)isTorchSupported;
         [Export("isTorchSupported")]
 
-        bool IsTorchSupported { get; }
+        bool IsTorchSupported();
 
         // -(void)toggleTorch;
         [Export("toggleTorch")]

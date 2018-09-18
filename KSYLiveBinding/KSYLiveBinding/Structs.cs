@@ -258,49 +258,6 @@ namespace KSYLive
         Rotate180
     }
 
-    static class CFunctions
-    {
-        // extern void runOnMainQueueWithoutDeadlocking (void (^block)());
-        [DllImport ("__Internal")]
-
-        static extern void runOnMainQueueWithoutDeadlocking (Action block);
-
-        // extern void runSynchronouslyOnVideoProcessingQueue (void (^block)());
-        [DllImport ("__Internal")]
-
-        static extern void runSynchronouslyOnVideoProcessingQueue (Action block);
-
-        // extern void runAsynchronouslyOnVideoProcessingQueue (void (^block)());
-        [DllImport ("__Internal")]
-
-        static extern void runAsynchronouslyOnVideoProcessingQueue (Action block);
-
-        // extern void runSynchronouslyOnContextQueue (GPUImageContext *context, void (^block)());
-        [DllImport ("__Internal")]
-
-        static extern void runSynchronouslyOnContextQueue (GPUImageContext context, Action block);
-
-        // extern void runAsynchronouslyOnContextQueue (GPUImageContext *context, void (^block)());
-        [DllImport ("__Internal")]
-
-        static extern void runAsynchronouslyOnContextQueue (GPUImageContext context, Action block);
-
-        // extern void reportAvailableMemoryForGPUImage (NSString *tag);
-        [DllImport ("__Internal")]
-
-        static extern void reportAvailableMemoryForGPUImage (NSString tag);
-
-        // extern void stillImageDataReleaseCallback (void *releaseRefCon, const void *baseAddress);
-        [DllImport ("__Internal")]
-
-        static extern unsafe void stillImageDataReleaseCallback (void* releaseRefCon, void* baseAddress);
-
-        // extern void GPUImageCreateResizedSampleBuffer (CVPixelBufferRef cameraFrame, CGSize finalSize, CMSampleBufferRef *sampleBuffer);
-        [DllImport ("__Internal")]
-
-        static extern unsafe void GPUImageCreateResizedSampleBuffer (CVPixelBuffer cameraFrame, CGSize finalSize, CMSampleBuffer sampleBuffer);
-    }
-
     public enum GPUImageFillModeType : uint
     {
         Stretch,
