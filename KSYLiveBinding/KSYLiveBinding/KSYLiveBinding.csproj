@@ -28,9 +28,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GPUImage, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.GPUImage.0.1.7.2\lib\Xamarin.iOS\GPUImage.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
@@ -44,17 +41,16 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <NativeReference Include="libksygpulive.framework">
       <Kind>Framework</Kind>
       <ForceLoad>True</ForceLoad>
     </NativeReference>
-    <NativeReference Include="GPUImage.framework">
-      <Kind>Framework</Kind>
-      <ForceLoad>True</ForceLoad>
-    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GPUImage\GPUImage.csproj">
+      <Project>{29C6A075-1418-404E-A2D5-1FD54DB8DA97}</Project>
+      <Name>GPUImage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>

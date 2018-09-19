@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSYLiveBinding", "KSYLiveBi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSYLiveDemo", "KSYLiveDemo\KSYLiveDemo.csproj", "{377BF3B3-797B-4CBA-A6B4-82B91E088132}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPUImage", "GPUImage\GPUImage.csproj", "{29C6A075-1418-404E-A2D5-1FD54DB8DA97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,17 @@ Global
 		{377BF3B3-797B-4CBA-A6B4-82B91E088132}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{377BF3B3-797B-4CBA-A6B4-82B91E088132}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{377BF3B3-797B-4CBA-A6B4-82B91E088132}.Debug|iPhone.Build.0 = Debug|iPhone
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Release|iPhone.Build.0 = Release|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{29C6A075-1418-404E-A2D5-1FD54DB8DA97}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -12,8 +12,6 @@ using ObjCRuntime;
 using OpenGLES;
 using UIKit;
 using GPUImage;
-using GPUImage.Sources;
-using GPUImage.Filters;
 
 namespace KSYLive
 {
@@ -726,7 +724,7 @@ namespace KSYLive
     }
 
     
-
+    [Static]
     partial interface Constants
     {
         // extern NSString *const KSYAudioStateDidChangeNotification __attribute__((availability(ios, introduced=7_0)));
