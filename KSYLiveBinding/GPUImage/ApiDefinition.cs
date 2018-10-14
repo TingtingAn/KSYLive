@@ -3229,8 +3229,8 @@ namespace GPUImage
     partial interface Constants
     {
         // extern double GPUImageFrameworkVersionNumber;
-        [Field("GPUImageFrameworkVersionNumber", "__Internal")]
-        double GPUImageFrameworkVersionNumber { get; }
+        //[Field("GPUImageFrameworkVersionNumber", "__Internal")]
+        //double GPUImageFrameworkVersionNumber { get; }
 
         // extern const unsigned char [] GPUImageFrameworkVersionString;
         //[Field("GPUImageFrameworkVersionString", "__Internal")]
