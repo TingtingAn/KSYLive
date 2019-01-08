@@ -199,7 +199,7 @@ namespace KSYLive
 
         // @property (copy, nonatomic) void (^audioProcessingCallback)(CMSampleBufferRef);
         [Export("audioProcessingCallback", ArgumentSemantic.Copy)]
-        Action AudioProcessingCallback { get; set; }
+        Action<IntPtr> AudioProcessingCallback { get; set; }
 
         // @property (copy, nonatomic) void (^pcmProcessingCallback)(uint8_t **, int, const AudioStreamBasicDescription *, CMTime);
         [Export("pcmProcessingCallback", ArgumentSemantic.Copy)]
@@ -426,11 +426,11 @@ namespace KSYLive
 
         // @property (copy, nonatomic) void (^audioProcessingCallback)(CMSampleBufferRef);
         [Export("audioProcessingCallback", ArgumentSemantic.Copy)]
-        Action AudioProcessingCallback { get; set; }
+        Action<IntPtr> AudioProcessingCallback { get; set; }
 
         // @property (copy, nonatomic) void (^videoProcessingCallback)(CMSampleBufferRef);
         [Export("videoProcessingCallback", ArgumentSemantic.Copy)]
-        Action VideoProcessingCallback { get; set; }
+        Action<IntPtr> VideoProcessingCallback { get; set; }
 
         // @property (copy, nonatomic) void (^interruptCallback)(BOOL);
         [Export("interruptCallback", ArgumentSemantic.Copy)]
@@ -488,7 +488,7 @@ namespace KSYLive
 
         // @property (copy, nonatomic) void (^audioProcessingCallback)(CMSampleBufferRef);
         [Export("audioProcessingCallback", ArgumentSemantic.Copy)]
-        Action AudioProcessingCallback { get; set; }
+        Action<IntPtr> AudioProcessingCallback { get; set; }
 
         // @property (copy, nonatomic) void (^pcmProcessingCallback)(uint8_t **, int, CMTime);
         [Export("pcmProcessingCallback", ArgumentSemantic.Copy)]
@@ -1030,7 +1030,7 @@ namespace KSYLive
 
         // @property (copy, nonatomic) void (^audioProcessingCallback)(CMSampleBufferRef);
         [Export("audioProcessingCallback", ArgumentSemantic.Copy)]
-        Action AudioProcessingCallback { get; set; }
+        Action<IntPtr> AudioProcessingCallback { get; set; }
 
         // @property (assign, nonatomic) AudioStreamBasicDescription asbd;
         [Export("asbd", ArgumentSemantic.Assign)]
@@ -1157,11 +1157,11 @@ namespace KSYLive
 
         // @property (copy, nonatomic) void (^audioProcessingCallback)(CMSampleBufferRef);
         [Export("audioProcessingCallback", ArgumentSemantic.Copy)]
-        Action AudioProcessingCallback { get; set; }
+        Action<IntPtr> AudioProcessingCallback { get; set; }
 
         // @property (copy, nonatomic) void (^videoProcessingCallback)(CMSampleBufferRef);
         [Export("videoProcessingCallback", ArgumentSemantic.Copy)]
-        Action VideoProcessingCallback { get; set; }
+        Action<IntPtr> VideoProcessingCallback { get; set; }
 
         // +(AVCaptureVideoOrientation)getCapOrientation:(UIInterfaceOrientation)orien;
         [Static]
@@ -1314,7 +1314,7 @@ namespace KSYLive
 
         // @property (copy, nonatomic) void (^videoProcessingCallback)(CVPixelBufferRef, CMTime);
         [Export("videoProcessingCallback", ArgumentSemantic.Copy)]
-        Action<CMTime> VideoProcessingCallback { get; set; }
+        Action<IntPtr, CMTime> VideoProcessingCallback { get; set; }
     }
 
     // @interface KSYGPUPicture : GPUImagePicture
@@ -2150,10 +2150,10 @@ namespace KSYLive
     }
 
     // typedef void (^KSYPlyVideoDataBlock)(CMSampleBufferRef);
-    delegate void KSYPlyVideoDataBlock();
+    delegate void KSYPlyVideoDataBlock(IntPtr buffer);
 
     // typedef void (^KSYPlyAudioDataBlock)(CMSampleBufferRef);
-    delegate void KSYPlyAudioDataBlock();
+    delegate void KSYPlyAudioDataBlock(IntPtr buffer);
 
     // typedef void (^KSYPlyMessageDataBlock)(NSDictionary *, int64_t, int64_t);
     delegate void KSYPlyMessageDataBlock(NSDictionary arg0, long arg1, long arg2);
@@ -3089,11 +3089,11 @@ namespace KSYLive
 
         // @property (copy, nonatomic) void (^videoProcessingCallback)(CMSampleBufferRef);
         [Export("videoProcessingCallback", ArgumentSemantic.Copy)]
-        Action VideoProcessingCallback { get; set; }
+        Action<IntPtr> VideoProcessingCallback { get; set; }
 
         // @property (copy, nonatomic) void (^audioProcessingCallback)(CMSampleBufferRef);
         [Export("audioProcessingCallback", ArgumentSemantic.Copy)]
-        Action AudioProcessingCallback { get; set; }
+        Action<IntPtr> AudioProcessingCallback { get; set; }
 
         // @property (copy, nonatomic) void (^pcmProcessingCallback)(uint8_t **, int, const AudioStreamBasicDescription *, CMTime);
         [Export("pcmProcessingCallback", ArgumentSemantic.Copy)]
