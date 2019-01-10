@@ -429,7 +429,7 @@ namespace GPUImage
         // -(NSArray *)targets;
         [Export("targets")]
         //[Verify(MethodToProperty), Verify(StronglyTypedNSArray)]
-        NSObject[] Targets();
+        NSArray Targets();
 
         // -(void)addTarget:(id<IGPUImageInput>)newTarget;
         [Export("addTarget:")]

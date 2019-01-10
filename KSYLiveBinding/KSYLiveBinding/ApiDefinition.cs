@@ -546,7 +546,7 @@ namespace KSYLive
 
         // @property (copy, nonatomic) void (^audioProcessingCallback)(CMSampleBufferRef);
         [Export("audioProcessingCallback", ArgumentSemantic.Copy)]
-        Action AudioProcessingCallback { get; set; }
+        Action<IntPtr> AudioProcessingCallback { get; set; }
 
         // @property (copy, nonatomic) void (^pcmProcessingCallback)(uint8_t **, int, CMTime);
         [Export("pcmProcessingCallback", ArgumentSemantic.Copy)]
