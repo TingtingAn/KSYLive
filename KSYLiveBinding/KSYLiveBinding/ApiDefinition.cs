@@ -144,7 +144,7 @@ namespace KSYLive
         // -(BOOL)startCapture;
         [Export("startCapture")]
 
-        bool StartCapture { get; }
+        bool StartCapture();
 
         // -(void)stopCapture;
         [Export("stopCapture")]
@@ -153,17 +153,17 @@ namespace KSYLive
         // -(BOOL)pauseCapture;
         [Export("pauseCapture")]
 
-        bool PauseCapture { get; }
+        bool PauseCapture();
 
         // -(BOOL)pauseWithMuteData;
         [Export("pauseWithMuteData")]
 
-        bool PauseWithMuteData { get; }
+        bool PauseWithMuteData();
 
         // -(BOOL)resumeCapture;
         [Export("resumeCapture")]
 
-        bool ResumeCapture { get; }
+        bool ResumeCapture();
 
         // @property (assign, nonatomic) BOOL bPlayCapturedAudio;
         [Export("bPlayCapturedAudio")]
@@ -263,7 +263,7 @@ namespace KSYLive
         // -(BOOL)checkCategory;
         [Export("checkCategory")]
 
-        bool CheckCategory { get; }
+        bool CheckCategory();
 
         // +(BOOL)isBluetoothInputAvaible;
         [Static]
